@@ -62,7 +62,7 @@ npm start
 ---
 
 ## Live Demo & Repository
-- **Live Demo:** [Click Here](https://f8y9k8-5173.csb.app/recipes)
+- **Live Demo:** [Click Here](https://f8y9k8-5173.csb.app/)
 - **Repository:** [GitHub Repo](https://github.com/Devendra-singh-baghel/mealmate)
 
 ---
