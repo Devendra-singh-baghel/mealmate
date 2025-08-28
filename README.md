@@ -64,6 +64,7 @@ npm start
 ## Live Demo & Repository
 - **Live Demo:** [Click Here](https://f8y9k8-5173.csb.app/)
 - **Repository:** [GitHub Repo](https://github.com/Devendra-singh-baghel/mealmate)
+- **Repository:** [ChatGpt Link](https://chatgpt.com/share/68b05d60-ad7c-8008-ba4f-4c6e1cf8b4e4)
 
 ---
 
