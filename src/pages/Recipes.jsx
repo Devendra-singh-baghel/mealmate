@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SearchBar from '../components/SearchBar'
 import { useMeals } from '../lib/MealContext ';
 import RecipeCard from '../components/RecipeCard';
+import { LuCookingPot } from "react-icons/lu";
 
 function Recipes() {
 
@@ -17,7 +18,7 @@ function Recipes() {
 
 
     return (
-        <div className='min-h-screen'>
+        <div>
             <section className='max-w-[1380px] w-full mx-auto flex flex-col justify-center items-center px-4 space-y-2 mb-14'>
 
                 <div className='flex flex-col justify-center items-center max-w-2xl text-center space-y-4 py-6'>
@@ -32,7 +33,14 @@ function Recipes() {
                 {loading && <p>Loading...</p>}
                 {error && <p className="text-red-500">{error}</p>}
                 {(!loading && (!meals || meals.length === 0)) && (
-                    <p className='bg-amber-400 p-3 rounded-md'>Meal Not Found!</p>
+                    
+                    <div className='flex flex-col items-center text-center space-y-3 w-sm'>
+                              <LuCookingPot className='size-20 text-gray-800 mb-7' />
+                              <span className='text-xl'>Oops! We couldn’t find any matching recipes.</span>
+                    
+                              <p className='text-gray-500 text-sm'>Don’t worry, try another ingredient and discover something new!</p>
+                    
+                            </div>
                 )}
 
 
