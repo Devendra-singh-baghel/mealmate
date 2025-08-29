@@ -43,7 +43,7 @@ To run MealMate locally:
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-link>
+git clone https://github.com/Devendra-singh-baghel/mealmate.git
 ```
 2. Navigate to the project folder:
 ```bash
@@ -55,9 +55,9 @@ npm install
 ```
 4. Start the development server:
 ```bash
-npm start
+npm run dev
 ```
-5. Open your browser and visit `http://localhost:3000`
+5. Open your browser and visit `http://localhost:5173/`
 
 ---
 
