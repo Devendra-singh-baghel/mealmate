@@ -1,19 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router'
 import { LuChefHat } from "react-icons/lu";
 import { FiHome, FiSearch, FiMenu, FiX } from "react-icons/fi";
 import { CiHeart, CiCircleInfo, CiMail } from "react-icons/ci";
+import { useFavorites } from '../lib/FavoritesContext';
 
-const menuList = [
-  { title: "Home", path: "/", icon: <FiHome /> },
-  { title: "Recipes", path: "/recipes", icon: <FiSearch /> },
-  { title: "Favorites", path: "/favorites", icon: <CiHeart /> },
-  { title: "About", path: "/about", icon: <CiCircleInfo /> },
-  { title: "Contact", path: "/contact", icon: <CiMail /> },
-]
+
 
 function Header() {
+  
   const [isOpen, setIsOpen] = useState(false);
+
+  const { favoriteRecipes } = useFavorites();
+
+  const menuList = [
+    { title: "Home", path: "/", icon: <FiHome /> },
+    { title: "Recipes", path: "/recipes", icon: <FiSearch /> },
+    { title: `Favorites (${favoriteRecipes.length})`, path: "/favorites", icon: <CiHeart /> },
+    { title: "About", path: "/about", icon: <CiCircleInfo /> },
+    { title: "Contact", path: "/contact", icon: <CiMail /> },
+  ]
 
   return (
     <nav className='w-full border-b border-gray-300 sticky top-0 right-0 left-0 bg-white z-50'>

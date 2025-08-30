@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import RecipeCard from './RecipeCard'
 import { useMeals } from '../lib/MealContext ';
 import { useNavigate } from 'react-router'
+import { useFavorites } from '../lib/FavoritesContext';
 
 function Featured() {
 
@@ -10,6 +11,7 @@ function Featured() {
     const [query, setQuery] = useState("cake");
 
     const { meals, loading, error, searchMeals } = useMeals();
+    const { toggleFavorite, isFavorite } = useFavorites();
 
     useEffect(() => {
         if (query) {
@@ -28,6 +30,9 @@ function Featured() {
                     <p className='text-gray-500 text-sm'>Try these popular recipes loved by our community.</p>
                 </div>
 
+                {loading && <p>Loading...</p>}
+                {error && <p className="text-red-500">{error}</p>}
+                
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full mt-10">
                     {featMeals.map((meal) => (
                         <div key={meal.idMeal}>
@@ -35,6 +40,8 @@ function Featured() {
                                 title={meal.strMeal}
                                 image={meal.strMealThumb}
                                 id={meal.idMeal}
+                                addToFavorites={() => toggleFavorite(meal)}
+                                isFavorite={isFavorite(meal.idMeal)}
                             />
                         </div>
                     ))}

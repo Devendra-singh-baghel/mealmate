@@ -2,17 +2,22 @@ import React from 'react'
 import Header from './components/Header'
 import { Outlet } from 'react-router'
 import Footer from './components/Footer'
-import { MealProvider } from './lib/MealContext '
+import AppContextProvider from './lib/AppContextProvider'
 
 function App() {
   return (
-    <div>
-      <Header />
-      <MealProvider>
+    <AppContextProvider>
+      <header>
+        <Header />
+      </header>
+
+      <main>
         <Outlet />
-      </MealProvider>
+      </main>
+
       <Footer />
-    </div>
+    </AppContextProvider>
+
   )
 }
 
